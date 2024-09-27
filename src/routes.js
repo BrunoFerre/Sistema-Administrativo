@@ -6,6 +6,7 @@ import CursandoCon from "./views/CursandoCon.vue";
 import Finales from "./views/Finales.vue";
 import MateriasAprobadas from "./views/MateriasAprobadas.vue";
 import Titulo from "./views/Titulo.vue";
+import PlanEstudio from "./views/PlanEstudio.vue";
 const router = createRouter({
     history: createWebHistory(),
     routes: [
@@ -17,6 +18,7 @@ const router = createRouter({
         { path: "/titulo", component: Titulo },
         { path: "/alumno-regular", component: AlumnoRegular },
         { path: "/cuenta", component: Cuenta },
+        { path: "/plan-estudio", component: PlanEstudio },
     ],
 })
 export default router

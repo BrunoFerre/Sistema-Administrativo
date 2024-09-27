@@ -17,6 +17,7 @@
           <th class="w-25">Calificaciónes</th>
           <th>Condición</th>
           <th>Tipo de Materia</th>
+          <th>Año</th>
         </tr>
       </thead>
       <tbody
@@ -30,6 +31,7 @@
           <td>{{ materia.nota }}</td>
           <td>{{ materia.estado }}</td>
           <td>{{ materia.tipo }}</td>
+          <td>{{ materia.anio }}</td>
         </tr>
       </tbody>
       <tfoot>

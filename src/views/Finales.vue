@@ -8,25 +8,22 @@
                 <tr>
                     <th>#</th>
                     <th>Materia</th>
-                    <th>Calificaciónes</th>
+                    <th>Fecha de Final</th>
                     <th>Condición</th>
-                    <th>Tipo de Materia</th>
+                    <th>Llamado</th>
+                    <th>Darse de baja</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>1</td>
                     <td>Matemáticas</td>
-                    <td>10</td>
-                    <td>Aprobado</td>
+                    <td>01/01/2022</td>
                     <td>Regular</td>
+                    <td>1</td>
+                    <td>X</td>
                 </tr>
             </tbody>
-            <tfoot>
-                <tr>
-                    <th colspan="5">Descargar Reporte</th>
-                </tr>
-            </tfoot>
         </table>
     </div>
 </template>

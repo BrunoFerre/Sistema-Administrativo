@@ -30,7 +30,11 @@
       </tbody>
       <tfoot>
         <tr>
-          <th colspan="5">Descargar Reporte</th>
+          <th colspan="6" class="bg-green-200">
+            <span class="hover:bg-green-600 cursor-pointer py-2 px-2 rounded-lg"
+              >Descargar Reporte</span
+            >
+          </th>
         </tr>
       </tfoot>
     </table>
