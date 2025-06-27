@@ -3,331 +3,71 @@
     class="sidebar w-64 md:shadow transform -translate-x-full md:translate-x-0 transition-transform duration-150 ease-in bg-indigo-500"
   >
     <div class="sidebar-header flex items-center justify-center py-4">
-      <div class="inline-flex">
-        <a href="#" class="inline-flex flex-row items-center">
-          <IconDeviceLaptop size="50"/>
-          <span
-            class="leading-10 text-gray-100 text-2xl font-bold ml-1 uppercase"
-            >C.E.P N-62
-          </span>
-        </a>
+      <div class="inline-flex justify-evenly items-center w-full">
+        <IconDeviceLaptop size="50" />
+        <span class="bg-transparent">C.E.P N-62</span>
       </div>
     </div>
-    <div class="sidebar-content px-2 py-4 flex flex-col gap-10">
-      <div>
-        <li class="my-px">
-          <a
-            href="/"
-            class="flex flex-row items-center h-10 px-3 rounded-lg text-gray-700 bg-gray-100"
+    <div class="sidebar-content flex flex-col justify-start px-4">
+      <span class="font-bold">Opciones</span>
+      <ul class="flex flex-col items-start justify-start mx-2 gap-2 my-3">
+        <li><a href="/cursando">Cursando Actualmente</a></li>
+        <li><a href="/aprobadas">Asignaturas Aprobadas</a></li>
+        <li><a href="/condicional">Cursando Condicional</a></li>
+        <li><a href="/finales">Inscripciones a Finales</a></li>
+      </ul>
+      <span class="font-bold">Constancias</span>
+      <ul class="flex flex-col items-start justify-start mx-2 gap-5 my-3">
+        <li><a href="/titulo">Titulo en Tramite</a></li>
+        <li><a href="/alumno-regular">Alumno Regular</a></li>
+        <li><a href="/plan-estudio">Plan de Estudio</a></li>
+      </ul>
+      <span class="font-bold">Cuenta</span>
+      <ul class="flex flex-col items-start justify-start mx-2 gap-3 my-3">
+        <li>
+          <a class="inline-flex items-center gap-2 w-full" href="/cuenta"
+            ><IconUserFilled />Perfil</a
           >
-            <span
-              class="flex items-center justify-center text-lg text-gray-400"
-            >
-              <svg
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                class="h-6 w-6"
-              >
-                <path
-                  d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
-                />
-              </svg>
-            </span>
-            <span class="ml-3">Incio</span>
-          </a>
         </li>
-      </div>
-      <div>
-        <ul>
-          <span class="flex font-medium text-md text-gray-300 uppercase"
-            >Opciones</span
+        <li>
+          <a class="inline-flex items-center gap-2 w-full" href="#"
+            > <IconSettingsFilled />Configuración</a
           >
-          <li class="my-px">
-            <a
-              href="/cursando"
-              class="flex flex-row items-center h-10 px-3 rounded-lg text-gray-300 hover:bg-gray-100 hover:text-gray-700"
-            >
-              <span
-                class="flex items-center justify-center text-lg text-gray-400"
-              >
-                <svg
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  class="h-6 w-6"
-                >
-                  <path
-                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                  />
-                </svg>
-              </span>
-              <span class="ml-3">Cursando Actualmente</span>
-            </a>
-          </li>
-          <li class="my-px">
-            <a
-              href="/materias-aprobadas"
-              class="flex flex-row items-center h-10 px-3 rounded-lg text-gray-300 hover:bg-gray-100 hover:text-gray-700"
-            >
-              <span
-                class="flex items-center justify-center text-lg text-gray-400"
-              >
-                <svg
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  class="h-6 w-6"
-                >
-                  <path
-                    d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"
-                  />
-                </svg>
-              </span>
-              <span class="ml-3">Materias Aprobadas</span>
-            </a>
-          </li>
-
-          <li class="my-px">
-            <a
-              href="/condicional"
-              class="flex flex-row items-center h-10 px-3 rounded-lg text-gray-300 hover:bg-gray-100 hover:text-gray-700"
-            >
-              <span
-                class="flex items-center justify-center text-lg text-gray-400"
-              >
-                <svg
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  class="h-6 w-6"
-                >
-                  <path
-                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                  />
-                </svg>
-              </span>
-              <span class="ml-3">Cursando condicional</span>
-            </a>
-          </li>
-          <li class="my-px">
-            <a
-              href="/finales"
-              class="flex flex-row items-center h-10 px-3 rounded-lg text-gray-300 hover:bg-gray-100 hover:text-gray-700"
-            >
-              <span
-                class="flex items-center justify-center text-lg text-gray-400"
-              >
-                <svg
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  class="h-6 w-6"
-                >
-                  <path
-                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
-                  />
-                </svg>
-              </span>
-              <span class="ml-3">Inscripciones a Finales</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div>
-        <ul>
-          <span class="flex font-medium text-md text-gray-300 uppercase"
-            >Constancias</span
+        </li>
+        <li>
+          <a class="inline-flex items-center gap-2 w-full" href="#"
+            > <IconLogout2 />Cerrar sesión</a
           >
-          <li class="my-px">
-            <a
-              href="/titulo"
-              class="flex flex-row items-center h-10 px-3 rounded-lg text-gray-300 hover:bg-gray-100 hover:text-gray-700"
-            >
-              <span
-                class="flex items-center justify-center text-lg text-gray-400"
-              >
-                <svg
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  class="h-6 w-6"
-                >
-                  <path
-                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                  />
-                </svg>
-              </span>
-              <span class="ml-3">Titulo en Tramite</span>
-            </a>
-          </li>
-          <li class="my-px">
-            <a
-              href="/alumno-regular"
-              class="flex flex-row items-center h-10 px-3 rounded-lg text-gray-300 hover:bg-gray-100 hover:text-gray-700"
-            >
-              <span
-                class="flex items-center justify-center text-lg text-gray-400"
-              >
-                <svg
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  class="h-6 w-6"
-                >
-                  <path
-                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                  />
-                </svg>
-              </span>
-              <span class="ml-3">Alumno Regular</span>
-            </a>
-          </li>
-          <li class="my-px">
-            <a
-              href="/plan-estudio"
-              class="flex flex-row items-center h-10 px-3 rounded-lg text-gray-300 hover:bg-gray-100 hover:text-gray-700"
-            >
-              <span
-                class="flex items-center justify-center text-lg text-gray-400"
-              >
-                <svg
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  class="h-6 w-6"
-                >
-                  <path
-                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                  />
-                </svg>
-              </span>
-              <span class="ml-3">Plan de Estudio</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div>
-        <ul>
-          <span class="flex font-medium text-md text-gray-300 uppercase"
-            >Cuenta</span
-          >
-          <li class="my-px">
-            <a
-              href="/cuenta"
-              class="flex flex-row items-center h-10 px-3 rounded-lg text-gray-300 hover:bg-gray-100 hover:text-gray-700"
-            >
-              <span
-                class="flex items-center justify-center text-lg text-gray-400"
-              >
-                <svg
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  class="h-6 w-6"
-                >
-                  <path
-                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                  />
-                </svg>
-              </span>
-              <span class="ml-3">Perfil</span>
-            </a>
-          </li>
-          <li class="my-px">
-            <a
-              href="#"
-              class="flex flex-row items-center h-10 px-3 rounded-lg text-gray-300 hover:bg-gray-100 hover:text-gray-700"
-            >
-              <span
-                class="flex items-center justify-center text-lg text-gray-400"
-              >
-                <svg
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  class="h-6 w-6"
-                >
-                  <path
-                    d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
-                  />
-                  <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-              </span>
-              <span class="ml-3">Configuración</span>
-            </a>
-          </li>
-          <li class="my-px">
-            <a
-              href="#"
-              class="flex flex-row items-center h-10 px-3 rounded-lg text-gray-300 hover:bg-gray-100 hover:text-gray-700"
-            >
-              <span
-                class="flex items-center justify-center text-lg text-red-400"
-              >
-                <svg
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  class="h-6 w-6"
-                >
-                  <path
-                    d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"
-                  />
-                </svg>
-              </span>
-              <span class="ml-3">Cerrar sesión</span>
-            </a>
-          </li>
-        </ul>
-      </div>
+        </li>
+      </ul>
     </div>
   </aside>
 </template>
 <script>
-import {IconDeviceLaptop} from "@tabler/icons-vue";
+import {
+  IconDeviceLaptop,
+  IconUserFilled,
+  IconSettingsFilled,
+  IconLogout2,
+} from "@tabler/icons-vue";
 export default {
   name: "MenuBar",
   components: {
     IconDeviceLaptop,
+    IconUserFilled,
+    IconSettingsFilled,
+    IconLogout2,
   },
 };
 </script>
-<style>
+<style scoped>
 li {
   list-style: none;
+}
+span {
+  @apply font-bold text-lg;
+}
+a {
+  @apply flex flex-row items-center bg-slate-100 h-8 px-3 rounded-lg w-[200px] hover:bg-slate-300;
 }
 </style>
