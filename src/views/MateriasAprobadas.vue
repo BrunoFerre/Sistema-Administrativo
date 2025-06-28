@@ -16,22 +16,20 @@
           <th>Materia</th>
           <th class="w-25">Calificaciónes</th>
           <th>Condición</th>
-          <th>Tipo de Materia</th>
-          <th>Año</th>
+          <th>Llamado</th>
         </tr>
       </thead>
       <tbody
-        v-if="materias.length > 0"
-        v-for="(materia, index) in materias"
-        :key="materia.id"
+        v-if="asignaturas.length > 0"
+        v-for="(asignatura, index) in asignaturas"
+        :key="asignatura.id"
       >
         <tr class="uppercase">
           <td>{{ index + 1 }}</td>
-          <td>{{ materia.materia }}</td>
-          <td>{{ materia.nota }}</td>
-          <td>{{ materia.estado }}</td>
-          <td>{{ materia.tipo }}</td>
-          <td>{{ materia.anio }}</td>
+          <td>{{ asignatura.asignatura }}</td>
+          <td>{{ asignatura.nota }}</td>
+          <td>{{ asignatura.condicion }}</td>
+          <td>{{ asignatura.llamado }}</td>
         </tr>
       </tbody>
       <tfoot>
@@ -56,7 +54,7 @@ export default {
   },
   data() {
     return {
-      materias: [],
+      asignaturas: [],
       loading: false,
     };
   },
@@ -66,12 +64,25 @@ export default {
   methods: {
     aprobado() {
       this.loading = true;
+
+      let config = {
+        method: "get",
+        maxBodyLength: Infinity,
+        url: "http://localhost:8080/finales/aprobadas",
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("token"),
+        },
+      }
       setTimeout(() => {
         axios
-          .get("http://localhost:8080/api/alumnos/aprobado/42273555")
+          .request(config)
           .then((response) => {
-            this.materias = response.data;
-            console.log(response.data);
+            console.log(JSON.stringify(response.data));
+            this.asignaturas = response.data;
+            console.log(this.asignaturas);
+          })
+          .catch((error) => {
+            console.log(error);
           })
           .finally(() => {
             this.loading = false;

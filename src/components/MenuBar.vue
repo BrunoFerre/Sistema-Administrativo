@@ -12,7 +12,7 @@
       <span class="font-bold">Opciones</span>
       <ul class="flex flex-col items-start justify-start mx-2 gap-2 my-3">
         <li><a href="/cursando">Cursando Actualmente</a></li>
-        <li><a href="/aprobadas">Asignaturas Aprobadas</a></li>
+        <li><a href="/materias-aprobadas">Asignaturas Aprobadas</a></li>
         <li><a href="/condicional">Cursando Condicional</a></li>
         <li><a href="/finales">Inscripciones a Finales</a></li>
       </ul>

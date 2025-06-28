@@ -1,26 +1,29 @@
 <template>
   <div class="container mx-auto mt-5">
-    <div class="flex justify-center items-center h-[300px] mx-auto" v-if="loading">
+    <div
+      class="flex justify-center items-center h-[300px] mx-auto"
+      v-if="loading"
+    >
       <Loader />
     </div>
     <table v-else>
       <caption class="text-center text-2xl mb-5 font-bold">
-        Materias Cursando Actualmente
+        Asignaturas Cursando Actualmente
       </caption>
       <thead>
         <tr>
           <th>#</th>
-          <th>Materia</th>
-          <th>Tipo de Materia</th>
+          <th>Asignatura</th>
+          <th>Tipo de Asignatura</th>
           <th>Año</th>
         </tr>
       </thead>
-      <tbody v-if="materias.length > 0" v-for="(materia, index) in materias">
+      <tbody v-if="asignaturas.length > 0" v-for="(asignatura, index) in asignaturas">
         <tr class="uppercase">
           <td>{{ index + 1 }}</td>
-          <td>{{ materia.materia }}</td>
-          <td>{{ materia.tipo }}</td>
-          <td>{{ materia.anio }}</td>
+          <td>{{ asignatura.materia }}</td>
+          <td>{{ asignatura.tipo }}</td>
+          <td>{{ asignatura.anio }}</td>
         </tr>
       </tbody>
       <tfoot>
@@ -45,7 +48,7 @@ export default {
   },
   data() {
     return {
-      materias: [],
+      asignaturas: [],
       loading: false,
     };
   },
@@ -54,15 +57,26 @@ export default {
   },
   methods: {
     cursando() {
+      let config = {
+        method: "get",
+        maxBodyLength: Infinity,
+        url: "http://localhost:8080/curso/alumno/cursando",
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("token"),
+        },
+      };
+
       this.loading = true;
       setTimeout(() => {
         axios
-          .get("http://localhost:8080/api/alumnos/cursando/42273555")
+          .request(config)
           .then((response) => {
-            this.materias = response.data;
-            console.log(response.data);
+            console.log(JSON.stringify(response.data));
+            this.asignaturas = response.data;
           })
-          .finally(() => {
+          .catch((error) => {
+            console.log(error);
+          }).finally(() => {
             this.loading = false;
           });
       }, 2000); // El tiempo de delay está en milisegundos, aquí 2000ms = 2 segundos

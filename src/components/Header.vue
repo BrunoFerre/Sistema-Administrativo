@@ -1,5 +1,5 @@
 <template>
-  <header class="header text-white text-xl font-b shadow py-4 mx-2">
+  <header class="header  text-xl font-b shadow py-4 mx-2">
     <div class="header-content flex items-center flex-row">
       <form action="#">
         <div class="hidden md:flex relative text-3xl pl-5 text-bold">
@@ -7,7 +7,7 @@
         </div>
         <div class="flex md:hidden">
           <select
-            class="h-[40px] m:hidden text-md text-white border-gray-200 rounded-lg px-2"
+            class="h-[40px] m:hidden text-md text-black border-gray-200 rounded-lg px-2"
           >
             <option>Bienvenido al sistema</option>
             <option>Aprobadas</option>
