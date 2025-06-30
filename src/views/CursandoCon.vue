@@ -8,24 +8,25 @@
     </div>
     <table v-else>
       <caption class="text-center text-2xl mb-5 font-bold">
-        Materias Cursando Condicional
+        Asignaturas Cursando Condicional
       </caption>
       <thead>
         <tr>
           <th>#</th>
-          <th>Materia</th>
-          <th>Tipo de Materia</th>
+          <th>Asignatura</th>
+          <th>Tipo de asignatura</th>
           <th>Año</th>
-          <th>Condición</th>
         </tr>
       </thead>
-      <tbody v-if="materias.length > 0" v-for="(materia, index) in materias">
+      <tbody
+        v-if="asignaturas.length > 0"
+        v-for="(asignatura, index) in asignaturas"
+      >
         <tr class="uppercase">
           <td>{{ index + 1 }}</td>
-          <td>{{ materia.materia }}</td>
-          <td>{{ materia.tipo }}</td>
-          <td>{{ materia.anio }}</td>
-          <td>{{ materia.estado }}</td>
+          <td>{{ asignatura.materia }}</td>
+          <td>{{ asignatura.tipo }}</td>
+          <td>{{ asignatura.anio }}</td>
         </tr>
       </tbody>
       <tfoot>
@@ -50,7 +51,7 @@ export default {
   },
   data() {
     return {
-      materias: [],
+      asignaturas: [],
       loading: false,
     };
   },
@@ -59,18 +60,30 @@ export default {
   },
   methods: {
     condicional() {
+      let config = {
+        method: "get",
+        maxBodyLength: Infinity,
+        url: "http://localhost:8080/alumno/asignatras/condicional",
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("token"),
+        },
+      };
+
       this.loading = true;
       setTimeout(() => {
         axios
-          .get("http://localhost:8080/api/alumnos/condicional/42273555")
+          .request(config)
           .then((response) => {
-            this.materias = response.data;
-            console.log(response.data);
+            console.log(JSON.stringify(response.data));
+            this.asignaturas = response.data;
+          })
+          .catch((error) => {
+            console.log(error);
           })
           .finally(() => {
             this.loading = false;
           });
-      }, 2000);
+      }, 2000); // El tiempo de delay está en milisegundos, aquí 2000ms = 2 segundos
     },
   },
 };

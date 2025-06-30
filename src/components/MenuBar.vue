@@ -30,13 +30,13 @@
           >
         </li>
         <li>
-          <a class="inline-flex items-center gap-2 w-full" href="#"
-            > <IconSettingsFilled />Configuración</a
+          <a class="inline-flex items-center gap-2 w-full" href="#">
+            <IconSettingsFilled />Configuración</a
           >
         </li>
         <li>
-          <a class="inline-flex items-center gap-2 w-full" href="#"
-            > <IconLogout2 />Cerrar sesión</a
+          <a class="inline-flex items-center gap-2 w-full" href="#">
+            <IconLogout2 />Cerrar sesión</a
           >
         </li>
       </ul>

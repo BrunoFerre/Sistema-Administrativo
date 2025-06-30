@@ -60,7 +60,7 @@ export default {
       let config = {
         method: "get",
         maxBodyLength: Infinity,
-        url: "http://localhost:8080/curso/alumno/cursando",
+        url: "http://localhost:8080/alumno/asignatras/cursando",
         headers: {
           Authorization: "Bearer " + localStorage.getItem("token"),
         },

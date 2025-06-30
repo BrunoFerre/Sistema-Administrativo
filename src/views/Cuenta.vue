@@ -1,55 +1,58 @@
 <template>
-  <div class="flex items-start justify-center w-full" v-if="login">
-    <PersonaComponent />
-    <div>
-      <label>
-        Usuario:
-        <input type="text" name="username" :value="persona.username" disabled />
-      </label>
-      <label>
-        Nombre:
-        <input type="text" name="name" :value="persona.nombre" disabled />
-      </label>
-      <label>
-        Apellido:
-        <input type="text" name="apellido" :value="persona.apellido" disabled />
-      </label>
-      <label>
-        Email:
-        <input type="text" name="email" :value="persona.email" disabled />
-      </label>
-      <label>
-        Telefono:
-        <input type="text" name="telefono" :value="persona.telefono" disabled />
-      </label>
-      <label>
-        D.N.I:
-        <input type="text" name="DNI" :value="persona.dni" disabled />
-      </label>
-      <label>
-        Rol:
-        <input type="text" name="rol" value="persona.rol" disabled />
-      </label>
-      <label
-        >Estado:
-        <input type="text" name="estado" :value="persona.estado" disabled />
-      </label>
-    </div>
+  <div
+    class="flex flex-wrap justify-start gap-5 m-5 p-5 border border-gray-200"
+    v-if="!loading"
+  >
+    <h3 class="text-2xl w-full font-semibold">Datos personales</h3>
+    <section class="flex flex-col gap-5 text-lg w-1/2 py-3 capitalize">
+      <div class="flex flex-row gap-5">
+        <p class="mr-5 w-32">Nombres:</p>
+        <p class="bg-gray-200 px-2 rounded-md min-w-44">{{ persona.nombre }}</p>
+      </div>
+      <div class="flex flex-row gap-5">
+        <p class="mr-5 w-32">Apellidos:</p>
+        <p class="bg-gray-200 px-2 rounded-md min-w-44">{{ persona.apellido }}</p>
+      </div>
+      <div class="flex flex-row gap-5">
+        <p class="mr-5 w-32">D.N.I:</p>
+        <p class="bg-gray-200 px-2 rounded-md min-w-44">{{ persona.dni }}</p>
+      </div>
+
+      <div class="flex flex-row gap-5">
+        <p class="mr-5 w-32">F/N:</p>
+        <p class="bg-gray-200 px-2 rounded-md min-w-44">1999/01/01</p>
+      </div>
+    </section>
+    <section class="flex flex-col gap-5 text-lg w-2/2 py-3 capitalize">
+      <div class="flex flex-row gap-5">
+        <p class="mr-5 w-32">Usuario:</p>
+        <p class="bg-gray-200 rounded-md min-w-44 px-2 lowercase">{{ persona.username }}</p>
+      </div>
+      <div class="flex flex-row gap-5">
+        <p class="mr-5 w-32">Email:</p>
+        <p class="bg-gray-200 rounded-md min-w-44 px-2 lowercase">{{ persona.email }}</p>
+      </div>
+      <div class="flex flex-row gap-5">
+        <p class="mr-5 w-32">Telefono :</p>
+        <p class="bg-gray-200 rounded-md min-w-44 px-2">{{ persona.telefono }}</p>
+      </div>
+
+      <div class="flex flex-row gap-5">
+        <p class="mr-5 w-32">Estado:</p>
+        <p class="bg-gray-200 rounded-md min-w-44 px-2">{{ persona.estado }}</p>
+      </div>
+    </section>
   </div>
-  <div v-else class="w-2/3 mx-auto flex items-center justify-center mt-10">
-    <Login />
-  </div>
+  <Login v-else></Login>
 </template>
 
 <script>
 import axios from "axios";
 import Login from "../components/Login.vue";
-import PersonaComponent from "../components/Persona.vue";
 export default {
   name: "Cuenta",
   components: {
     Login,
-    PersonaComponent,
   },
   data() {
     return {
@@ -91,101 +94,4 @@ export default {
   },
 };
 </script>
-<style scoped>
-label {
-  @apply text-2xl uppercase inline-flex gap-4 w-full;
-}
-/* From Uiverse.io by andrew-demchenk0 */
-.card {
-  --main-color: #000;
-  --submain-color: #78858f;
-  --bg-color: #fff;
-  position: relative;
-  width: 300px;
-  height: 384px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 20px;
-  background: var(--bg-color);
-}
-
-.card__img {
-  height: 192px;
-  width: 100%;
-}
-
-.card__img svg {
-  height: 100%;
-  border-radius: 20px 20px 0 0;
-}
-
-.card__avatar {
-  position: absolute;
-  width: 114px;
-  height: 114px;
-  background: var(--bg-color);
-  border-radius: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  top: calc(50% - 57px);
-}
-
-.card__avatar svg {
-  width: 100px;
-  height: 100px;
-}
-
-.card__title {
-  margin-top: 60px;
-  font-weight: 500;
-  font-size: 18px;
-  color: var(--main-color);
-}
-
-.card__subtitle {
-  margin-top: 10px;
-  font-weight: 400;
-  font-size: 15px;
-  color: var(--submain-color);
-}
-
-.card__btn {
-  margin-top: 15px;
-  width: 76px;
-  height: 31px;
-  border: 2px solid var(--main-color);
-  border-radius: 4px;
-  font-weight: 700;
-  font-size: 11px;
-  color: var(--main-color);
-  background: var(--bg-color);
-  text-transform: uppercase;
-  transition: all 0.3s;
-}
-
-.card__btn-solid {
-  background: var(--main-color);
-  color: var(--bg-color);
-}
-
-.card__btn:hover {
-  background: var(--main-color);
-  color: var(--bg-color);
-}
-
-.card__btn-solid:hover {
-  background: var(--bg-color);
-  color: var(--main-color);
-}
-</style>
-
-<!--    this.id = persona.getId();
-        this.username = persona.getUsername();
-        this.password = persona.getPassword();
-        this.nombre = persona.getNombre();
-        this.apellido = persona.getApellido();
-        this.dni = persona.getDni();
-        this.telefono = persona.getTelefono();
-        this.email = persona.getEmail(); -->
+<style scoped></style>
